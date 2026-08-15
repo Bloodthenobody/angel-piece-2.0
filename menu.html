@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Angel Piece — Menu</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+
+    color: #17202a;
+
+    background:
+        radial-gradient(
+            ellipse at 15% 30%,
+            rgba(255,255,255,.95) 0 5%,
+            transparent 17%
+        ),
+        radial-gradient(
+            ellipse at 75% 25%,
+            rgba(255,255,255,.9) 0 6%,
+            transparent 18%
+        ),
+        linear-gradient(
+            180deg,
+            #bceaff 0%,
+            #eafaff 40%,
+            #80cce9 70%,
+            #459bc5 100%
+        );
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* HEADER */
+
+.header {
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffbd00,
+            #ffd83d,
+            #ffbd00
+        );
+
+    padding: 18px 6%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.18);
+}
+
+.logo {
+
+    font-size: 27px;
+
+    font-weight: 1000;
+
+    color: white;
+
+    text-shadow:
+        2px 3px 0 #c78300;
+}
+
+.owner {
+
+    background: #1b1b1b;
+
+    color: white;
+
+    padding: 10px 17px;
+
+    border-radius: 9px;
+
+    font-weight: 900;
+}
+
+/* MAIN */
+
+.container {
+
+    width: min(1100px, 92%);
+
+    margin: 60px auto;
+}
+
+.title {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+.title h1 {
+
+    font-size: 48px;
+
+    font-weight: 1000;
+
+    color: #222;
+}
+
+.title p {
+
+    margin-top: 10px;
+
+    color: #526875;
+
+    font-size: 17px;
+}
+
+/* MENU */
+
+.menu-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.menu-card {
+
+    background:
+        rgba(255,255,255,.95);
+
+    border-radius: 17px;
+
+    padding: 27px 20px;
+
+    text-align: center;
+
+    border: 2px solid transparent;
+
+    box-shadow:
+        0 8px 25px rgba(50,80,100,.15);
+
+    transition: .25s;
+}
+
+.menu-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        #ffca16;
+
+    box-shadow:
+        0 15px 30px rgba(50,80,100,.22);
+}
+
+.icon {
+
+    font-size: 45px;
+
+    margin-bottom: 13px;
+}
+
+.menu-card h2 {
+
+    font-size: 19px;
+
+    color: #bd8500;
+
+    margin-bottom: 8px;
+}
+
+.menu-card p {
+
+    color: #687883;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+/* SPECIAL CARDS */
+
+.angel {
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffef0,
+            #fff1a5
+        );
+}
+
+.demon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #f2efff,
+            #d8d0ff
+        );
+}
+
+.shop {
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff7d5,
+            #ffffff
+        );
+}
+
+.community {
+
+    background:
+        linear-gradient(
+            135deg,
+            #eafff3,
+            #ffffff
+        );
+}
+
+/* FOOTER */
+
+footer {
+
+    margin-top: 70px;
+
+    padding: 25px 6%;
+
+    background: #ffbd00;
+
+    text-align: center;
+
+    font-weight: 800;
+}
+
+/* MOBILE */
+
+@media(max-width:900px) {
+
+    .menu-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+@media(max-width:500px) {
+
+    .menu-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .title h1 {
+
+        font-size: 36px;
+    }
+
+    .owner {
+
+        display: none;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="logo">
+✦ ANGEL PIECE
+</div>
+
+<div class="owner">
+👑 OFFICIAL OWNER
+</div>
+
+</header>
+
+
+<main class="container">
+
+<section class="title">
+
+<h1>ANGEL PIECE MENU</h1>
+
+<p>
+Choose where you want to explore.
+Welcome to the world between Heaven and Demon.
+</p>
+
+</section>
+
+
+<section class="menu-grid">
+
+
+<a href="index.html" class="menu-card">
+
+<div class="icon">🏠</div>
+
+<h2>HOME</h2>
+
+<p>
+Return to the official Angel Piece homepage.
+</p>
+
+</a>
+
+
+<a href="guide.html" class="menu-card">
+
+<div class="icon">🎮</div>
+
+<h2>GAME</h2>
+
+<p>
+Learn how Angel Piece works and start your adventure.
+</p>
+
+</a>
+
+
+<a href="database.html" class="menu-card">
+
+<div class="icon">📚</div>
+
+<h2>DATABASE</h2>
+
+<p>
+Explore Fruits, Weapons, Pets, Islands, Bosses and more.
+</p>
+
+</a>
+
+
+<a href="shop.html" class="menu-card shop">
+
+<div class="icon">🛒</div>
+
+<h2>SHOP</h2>
+
+<p>
+Buy Fruits, Weapons, Pets and other items.
+</p>
+
+</a>
+
+
+<a href="angel.html" class="menu-card angel">
+
+<div class="icon">😇</div>
+
+<h2>ANGEL</h2>
+
+<p>
+Discover Angel species, Angel Fruits and the good path.
+</p>
+
+</a>
+
+
+<a href="demon.html" class="menu-card demon">
+
+<div class="icon">😈</div>
+
+<h2>DEMON</h2>
+
+<p>
+Discover Demon Fruits, corruption and Demon bounty hunting.
+</p>
+
+</a>
+
+
+<a href="community.html" class="menu-card community">
+
+<div class="icon">👥</div>
+
+<h2>COMMUNITY</h2>
+
+<p>
+Meet other Angel Piece players and see community content.
+</p>
+
+</a>
+
+
+<a href="feedback.html" class="menu-card">
+
+<div class="icon">💬</div>
+
+<h2>FEEDBACK</h2>
+
+<p>
+Send ideas, report bugs and help improve Angel Piece.
+</p>
+
+</a>
+
+
+<a href="rebirth.html" class="menu-card">
+
+<div class="icon">♻️</div>
+
+<h2>REBIRTH</h2>
+
+<p>
+Learn about Rebirth and the Celestial Realm.
+</p>
+
+</a>
+
+
+<a href="codes.html" class="menu-card">
+
+<div class="icon">🎁</div>
+
+<h2>CODES</h2>
+
+<p>
+Find official Angel Piece codes and rewards.
+</p>
+
+</a>
+
+
+<a href="abilities.html" class="menu-card">
+
+<div class="icon">⚡</div>
+
+<h2>ABILITIES</h2>
+
+<p>
+Discover special abilities and powerful skills.
+</p>
+
+</a>
+
+
+<a href="islands.html" class="menu-card">
+
+<div class="icon">🏝️</div>
+
+<h2>ISLANDS</h2>
+
+<p>
+Explore the complete Angel Piece island database.
+</p>
+
+</a>
+
+</section>
+
+</main>
+
+
+<footer>
+
+✦ ANGEL PIECE — OFFICIAL WEBSITE
+
+<br><br>
+
+🤖 Special thanks to ChatGPT for helping build Angel Piece.
+
+</footer>
+
+</body>
+</html>
