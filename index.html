@@ -1,525 +1,269 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Angel Piece - Menu</title>
+<title>Angel Piece</title>
 
 <style>
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #172832;
-    min-height: 100vh;
-
-    background:
-        radial-gradient(
-            ellipse at 15% 15%,
-            white 0 6%,
-            transparent 19%
-        ),
-        radial-gradient(
-            ellipse at 75% 20%,
-            white 0 7%,
-            transparent 20%
-        ),
-        radial-gradient(
-            ellipse at 35% 50%,
-            white 0 6%,
-            transparent 18%
-        ),
-        linear-gradient(
-            180deg,
-            #b9eaff 0%,
-            #eafaff 40%,
-            #80c9e4 70%,
-            #4698c1 100%
-        );
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #dff5ff;
+    color: #17313d;
 }
-
-
-/* HEADER */
 
 header {
-    background: linear-gradient(
-        90deg,
-        #ffb900,
-        #ffe06a,
-        #ffb900
-    );
-
-    padding: 18px 5%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    box-shadow: 0 5px 20px rgba(0,0,0,.15);
+    background: #f5bd18;
+    padding: 25px;
+    text-align: center;
 }
 
 .logo {
     color: white;
-    font-size: 28px;
-    font-weight: bold;
-
-    text-shadow:
-        3px 4px 0 #a66d00;
-}
-
-.home {
-    text-decoration: none;
-
-    background: white;
-    color: #172832;
-
-    padding: 10px 16px;
-
-    border-radius: 9px;
-
+    font-size: 42px;
     font-weight: bold;
 }
 
-
-/* MAIN */
+header p {
+    color: white;
+    font-weight: bold;
+}
 
 main {
-    width: 92%;
-    max-width: 1200px;
-
-    margin: 50px auto;
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
 }
 
-.title {
+.hero {
+    background: white;
+    padding: 40px;
     text-align: center;
-    margin-bottom: 40px;
+    border-radius: 15px;
+    margin-bottom: 25px;
 }
 
-.title h1 {
-    font-size: 48px;
+.hero h1 {
+    font-size: 38px;
+}
+
+.hero p {
+    line-height: 1.6;
+    color: #536b77;
+}
+
+.button {
+    display: inline-block;
+    background: #f5bd18;
+    color: #17313d;
+    text-decoration: none;
+    padding: 13px 22px;
+    margin-top: 15px;
+    border-radius: 8px;
     font-weight: bold;
 }
 
-.title h1 span {
-    color: #ffb900;
-
-    text-shadow:
-        2px 3px 0 #a66d00;
-}
-
-.title p {
-    margin-top: 12px;
-
-    color: #536b77;
-
-    font-size: 17px;
-}
-
-
-/* MENU */
-
-.menu {
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 18px;
-}
-
-
-/* CARDS */
-
-.menu-card {
-    display: block;
-
-    text-decoration: none;
-
+.section {
     background: white;
-
-    color: #172832;
-
-    border: 3px solid transparent;
-
-    border-radius: 18px;
-
-    padding: 25px 18px;
-
-    text-align: center;
-
-    box-shadow:
-        0 10px 25px rgba(40,70,90,.14);
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 15px;
 }
 
-.menu-card:hover {
-    border-color: #ffc21c;
+.section h2 {
+    color: #b27d00;
 }
 
-.icon {
-    font-size: 48px;
-    margin-bottom: 12px;
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
 }
 
-.menu-card h2 {
-    color: #bd8500;
-
-    font-size: 20px;
-
-    margin-bottom: 8px;
+.card {
+    background: #f4fbfe;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #d6e8ee;
 }
 
-.menu-card p {
-    color: #657983;
+.card h3 {
+    color: #b27d00;
+}
 
-    font-size: 13px;
-
+.card p {
+    color: #5d717b;
     line-height: 1.5;
 }
 
-
-/* SPECIAL CARDS */
-
-.fruit {
-    background: #fffdf0;
-}
-
-.demon {
-    background: #f3f0ff;
-}
-
-.rebirth {
-    background: #fff7cf;
-}
-
-
-/* FOOTER */
-
 footer {
-    margin-top: 60px;
-
-    padding: 35px 20px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #ffb900,
-            #ffe06a,
-            #ffb900
-        );
-
+    background: #f5bd18;
+    padding: 30px;
     text-align: center;
-
     font-weight: bold;
 }
 
-footer p {
-    margin-top: 8px;
-}
-
-
-/* TABLET */
-
-@media (max-width: 950px) {
-
-    .menu {
-        grid-template-columns:
-            repeat(3, 1fr);
-    }
-
-}
-
-
-/* MOBILE */
-
 @media (max-width: 700px) {
 
-    header {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .menu {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-    .title h1 {
-        font-size: 36px;
-    }
-
-}
-
-
-/* SMALL PHONE */
-
-@media (max-width: 450px) {
-
-    .menu {
+    .cards {
         grid-template-columns: 1fr;
     }
 
-    .title h1 {
+    .hero h1 {
         font-size: 30px;
     }
 
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
 <header>
 
-<div class="logo">
-✦ ANGEL PIECE
-</div>
+<div class="logo">ANGEL PIECE</div>
 
-<a href="index.html" class="home">
-🏠 HOME
-</a>
+<p>Official Game Website</p>
 
 </header>
 
-
 <main>
 
+<section class="hero">
 
-<div class="title">
-
-<h1>
-ANGEL <span>PIECE</span>
-</h1>
+<h1>Welcome to Angel Piece</h1>
 
 <p>
-Choose a safe section and explore the world of Angel Piece.
+Explore a world of oceans, islands, angels, demons,
+fruits, weapons, pets, bosses and powerful abilities.
+</p>
+
+<a class="button" href="menu.html">
+Open Angel Piece Menu
+</a>
+
+</section>
+
+
+<section class="section">
+
+<h2>About Angel Piece</h2>
+
+<p>
+Angel Piece is an adventure game where players explore
+five seas, discover powerful abilities, collect fruits,
+fight enemies and bosses, and choose between the Angel
+and Demon paths.
+</p>
+
+</section>
+
+
+<section class="section">
+
+<h2>The World</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Five Seas</h3>
+
+<p>
+Explore five different seas with unique islands,
+enemies and challenges.
 </p>
 
 </div>
 
 
-<div class="menu">
+<div class="card">
 
-
-<a href="index.html" class="menu-card">
-
-<div class="icon">🏠</div>
-
-<h2>Home</h2>
+<h3>Angel Path</h3>
 
 <p>
-Return to the Angel Piece homepage.
+Help others, explore the world and become a powerful Angel.
 </p>
-
-</a>
-
-
-<a href="database.html" class="menu-card">
-
-<div class="icon">📚</div>
-
-<h2>Database</h2>
-
-<p>
-Explore the Angel Piece database.
-</p>
-
-</a>
-
-
-<a href="fruits.html" class="menu-card fruit">
-
-<div class="icon">🍎</div>
-
-<h2>Fruits</h2>
-
-<p>
-Discover Angel Fruits and Demon Fruits.
-</p>
-
-</a>
-
-
-<a href="weapons.html" class="menu-card">
-
-<div class="icon">⚔️</div>
-
-<h2>Weapons</h2>
-
-<p>
-Discover swords and their stats.
-</p>
-
-</a>
-
-
-<a href="guns.html" class="menu-card">
-
-<div class="icon">🔫</div>
-
-<h2>Guns</h2>
-
-<p>
-Explore ranged weapons.
-</p>
-
-</a>
-
-
-<a href="pets.html" class="menu-card">
-
-<div class="icon">🐾</div>
-
-<h2>Pets</h2>
-
-<p>
-Explore animals, Angel pets and Demon pets.
-</p>
-
-</a>
-
-
-<a href="species.html" class="menu-card">
-
-<div class="icon">😇</div>
-
-<h2>Species</h2>
-
-<p>
-Discover Angel and Demon species.
-</p>
-
-</a>
-
-
-<a href="factions.html" class="menu-card demon">
-
-<div class="icon">🏴</div>
-
-<h2>Factions</h2>
-
-<p>
-Learn about Angels and Demons.
-</p>
-
-</a>
-
-
-<a href="enemies.html" class="menu-card">
-
-<div class="icon">👹</div>
-
-<h2>Enemies</h2>
-
-<p>
-Discover enemies from the five seas.
-</p>
-
-</a>
-
-
-<a href="bosses.html" class="menu-card">
-
-<div class="icon">👑</div>
-
-<h2>Bosses</h2>
-
-<p>
-Discover powerful game bosses.
-</p>
-
-</a>
-
-
-<a href="seabeasts.html" class="menu-card">
-
-<div class="icon">🐉</div>
-
-<h2>Sea Beasts</h2>
-
-<p>
-Explore Demonic Captures and Angelic Helpers.
-</p>
-
-</a>
-
-
-<a href="islands.html" class="menu-card">
-
-<div class="icon">🏝️</div>
-
-<h2>Islands</h2>
-
-<p>
-Explore the islands across the five seas.
-</p>
-
-</a>
-
-
-<a href="abilities.html" class="menu-card">
-
-<div class="icon">⚡</div>
-
-<h2>Abilities</h2>
-
-<p>
-Learn about skills, Haki and special powers.
-</p>
-
-</a>
-
-
-<a href="rebirth.html" class="menu-card rebirth">
-
-<div class="icon">♻️</div>
-
-<h2>Rebirth</h2>
-
-<p>
-Learn about Rebirth and the Celestial Realm.
-</p>
-
-</a>
-
-
-<a href="feedback.html" class="menu-card">
-
-<div class="icon">💬</div>
-
-<h2>Feedback</h2>
-
-<p>
-Send an idea or report a game bug.
-</p>
-
-</a>
-
 
 </div>
+
+
+<div class="card">
+
+<h3>Demon Path</h3>
+
+<p>
+Follow the dark path and unlock special Demon abilities.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Fruits</h3>
+
+<p>
+Discover Angel Fruits and Demon Fruits with different powers.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Weapons</h3>
+
+<p>
+Collect swords and other weapons and become stronger.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Rebirth</h3>
+
+<p>
+Reach the end of your journey and discover the Celestial Realm.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>Community</h2>
+
+<p>
+Players can suggest new ideas and report bugs to help improve
+Angel Piece.
+</p>
+
+</section>
 
 </main>
 
 
 <footer>
 
-✦ ANGEL PIECE
+ANGEL PIECE
 
-<p>
-A family-friendly fan game website.
-</p>
+<br>
+
+Family Friendly Game Website
 
 </footer>
 
-
 </body>
 </html>
+```
