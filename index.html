@@ -3,1399 +3,523 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Angel Piece 2.0 — Official</title>
+
+<title>Angel Piece - Menu</title>
 
 <style>
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: Arial, Helvetica, sans-serif;
-    color: #182733;
+    color: #172832;
     min-height: 100vh;
 
     background:
         radial-gradient(
-            ellipse at 15% 20%,
-            rgba(255,255,255,.95) 0 5%,
-            transparent 17%
+            ellipse at 15% 15%,
+            white 0 6%,
+            transparent 19%
         ),
         radial-gradient(
-            ellipse at 75% 25%,
-            rgba(255,255,255,.9) 0 7%,
-            transparent 18%
+            ellipse at 75% 20%,
+            white 0 7%,
+            transparent 20%
         ),
         radial-gradient(
-            ellipse at 35% 55%,
-            rgba(255,255,255,.8) 0 6%,
+            ellipse at 35% 50%,
+            white 0 6%,
             transparent 18%
         ),
         linear-gradient(
             180deg,
-            #b9e9ff 0%,
-            #eafaff 38%,
-            #8bd2ed 70%,
-            #469bc4 100%
+            #b9eaff 0%,
+            #eafaff 40%,
+            #80c9e4 70%,
+            #4698c1 100%
         );
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
 
-/* NAVIGATION */
+/* HEADER */
 
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
+header {
     background: linear-gradient(
         90deg,
         #ffb900,
-        #ffe05a,
+        #ffe06a,
         #ffb900
     );
 
-    padding: 12px 4%;
+    padding: 18px 5%;
 
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 15px;
 
-    box-shadow: 0 5px 20px rgba(0,0,0,.2);
+    box-shadow: 0 5px 20px rgba(0,0,0,.15);
 }
 
-.brand {
-    font-size: 22px;
-    font-weight: 1000;
-    white-space: nowrap;
-}
-
-.nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 5px;
-    flex: 1;
-}
-
-.nav a {
-    padding: 9px 10px;
-    border-radius: 8px;
-
-    font-size: 12px;
-    font-weight: 900;
-
-    transition: .2s;
-}
-
-.nav a:hover {
-    background: rgba(255,255,255,.5);
-    transform: translateY(-2px);
-}
-
-.owner {
-    background: #191919;
+.logo {
     color: white;
+    font-size: 28px;
+    font-weight: bold;
 
-    padding: 10px 14px;
-    border-radius: 8px;
-
-    font-weight: 900;
-    white-space: nowrap;
+    text-shadow:
+        3px 4px 0 #a66d00;
 }
+
+.home {
+    text-decoration: none;
+
+    background: white;
+    color: #172832;
+
+    padding: 10px 16px;
+
+    border-radius: 9px;
+
+    font-weight: bold;
+}
+
 
 /* MAIN */
 
 main {
-    width: min(1350px,94%);
-    margin: auto;
+    width: 92%;
+    max-width: 1200px;
+
+    margin: 50px auto;
 }
 
-/* HERO */
-
-.hero {
-    min-height: 620px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+.title {
     text-align: center;
-
-    padding: 70px 10px 50px;
+    margin-bottom: 40px;
 }
 
-.logo {
-    display: inline-block;
+.title h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
 
-    padding: 12px 30px;
-
-    border-radius: 25px;
-
-    background: linear-gradient(
-        180deg,
-        #ffe970,
-        #ffb900
-    );
-
-    border: 6px solid #fff3ad;
-
-    color: white;
-
-    font-size: 75px;
-    font-weight: 1000;
-
-    letter-spacing: -4px;
+.title h1 span {
+    color: #ffb900;
 
     text-shadow:
-        4px 5px 0 #bd7d00,
-        0 7px 20px rgba(0,0,0,.2);
-
-    box-shadow:
-        0 15px 35px rgba(100,75,0,.25);
+        2px 3px 0 #a66d00;
 }
 
-.hero h1 {
-    margin-top: 28px;
+.title p {
+    margin-top: 12px;
 
-    font-size: 43px;
-    font-weight: 1000;
+    color: #536b77;
+
+    font-size: 17px;
 }
 
-.gold {
-    color: #ffb600;
+
+/* MENU */
+
+.menu {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
 }
 
-.purple {
-    color: #604ca9;
-}
-
-.hero p {
-    max-width: 750px;
-
-    margin-top: 18px;
-
-    color: #536875;
-
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-.buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    gap: 12px;
-
-    margin-top: 28px;
-}
-
-.btn {
-    display: inline-block;
-
-    padding: 13px 22px;
-
-    border-radius: 10px;
-
-    font-weight: 900;
-
-    border: none;
-
-    cursor: pointer;
-
-    transition: .2s;
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-}
-
-.gold-btn {
-    background: #ffbf00;
-    color: #17202a;
-}
-
-.white-btn {
-    background: white;
-    color: #17202a;
-}
-
-/* SECTIONS */
-
-.section {
-    margin: 30px 0;
-
-    padding: 30px;
-
-    background: rgba(255,255,255,.95);
-
-    border-radius: 18px;
-
-    box-shadow:
-        0 10px 28px rgba(40,70,90,.15);
-}
-
-.section-title {
-    text-align: center;
-
-    margin-bottom: 25px;
-}
-
-.section-title h2 {
-    font-size: 32px;
-}
-
-.section-title p {
-    margin-top: 8px;
-
-    color: #697b86;
-}
 
 /* CARDS */
 
-.grid {
-    display: grid;
+.menu-card {
+    display: block;
 
-    grid-template-columns:
-        repeat(4,1fr);
+    text-decoration: none;
 
-    gap: 14px;
-}
+    background: white;
 
-.card {
-    background: #f8fbfc;
+    color: #172832;
 
-    border: 1px solid #dfe7ea;
+    border: 3px solid transparent;
 
-    border-radius: 14px;
+    border-radius: 18px;
 
-    padding: 20px;
+    padding: 25px 18px;
 
     text-align: center;
 
-    transition: .2s;
+    box-shadow:
+        0 10px 25px rgba(40,70,90,.14);
 }
 
-.card:hover {
-    transform: translateY(-5px);
-
-    border-color: #ffca1b;
-
-    box-shadow:
-        0 8px 20px rgba(40,70,90,.12);
+.menu-card:hover {
+    border-color: #ffc21c;
 }
 
 .icon {
-    font-size: 45px;
-
-    margin-bottom: 10px;
+    font-size: 48px;
+    margin-bottom: 12px;
 }
 
-.card h3 {
+.menu-card h2 {
     color: #bd8500;
 
-    margin-bottom: 7px;
-}
-
-.card p {
-    color: #697983;
-
-    font-size: 13px;
-
-    line-height: 1.45;
-}
-
-/* ANGEL / DEMON */
-
-.paths {
-    display: grid;
-
-    grid-template-columns:
-        1fr 80px 1fr;
-
-    gap: 15px;
-
-    align-items: center;
-}
-
-.path {
-    padding: 25px;
-
-    border-radius: 15px;
-
-    text-align: center;
-}
-
-.angel {
-    background:
-        linear-gradient(
-            135deg,
-            #fffef0,
-            #fff0a0
-        );
-
-    border: 2px solid #ffd22b;
-}
-
-.demon {
-    background:
-        linear-gradient(
-            135deg,
-            #f0ecff,
-            #d4ccff
-        );
-
-    border: 2px solid #806dd0;
-}
-
-.path .big {
-    font-size: 55px;
-}
-
-.path h3 {
-    margin: 10px 0;
-}
-
-.path p {
-    color: #63747e;
-
-    line-height: 1.5;
-}
-
-.vs {
-    text-align: center;
-
-    font-size: 25px;
-
-    font-weight: 1000;
-}
-
-/* SEAS */
-
-.seas {
-    display: grid;
-
-    grid-template-columns:
-        repeat(5,1fr);
-
-    gap: 12px;
-}
-
-.sea {
-    padding: 22px 12px;
-
-    border-radius: 14px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #eafaff,
-            #a8def1
-        );
-
-    border: 2px solid #8ccde5;
-
-    text-align: center;
-}
-
-.sea h3 {
-    color: #19729a;
+    font-size: 20px;
 
     margin-bottom: 8px;
 }
 
-.sea p {
-    font-size: 12px;
+.menu-card p {
+    color: #657983;
+
+    font-size: 13px;
 
     line-height: 1.5;
-
-    color: #526a76;
 }
 
-/* SHOP */
 
-.shop-grid {
-    display: grid;
+/* SPECIAL CARDS */
 
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap: 15px;
+.fruit {
+    background: #fffdf0;
 }
 
-.price {
-    margin-top: 10px;
-
-    font-weight: 1000;
-
-    color: #d08d00;
+.demon {
+    background: #f3f0ff;
 }
 
-/* FEEDBACK */
-
-.feedback {
-    text-align: center;
+.rebirth {
+    background: #fff7cf;
 }
 
-.feedback-box {
-    max-width: 650px;
-
-    margin: auto;
-
-    padding: 25px;
-
-    background: #f8fbfc;
-
-    border-radius: 14px;
-}
-
-.feedback-box input,
-.feedback-box textarea,
-.feedback-box select {
-    width: 100%;
-
-    margin-bottom: 12px;
-
-    padding: 12px;
-
-    border: 1px solid #d5dfe3;
-
-    border-radius: 8px;
-
-    font-family: inherit;
-}
-
-.feedback-box textarea {
-    min-height: 120px;
-
-    resize: vertical;
-}
-
-/* COMMUNITY */
-
-.community {
-    text-align: center;
-}
-
-.chatgpt {
-    margin-top: 20px;
-
-    display: inline-block;
-
-    padding: 15px 25px;
-
-    border-radius: 12px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f1f1f1,
-            #e3f7eb
-        );
-
-    font-weight: 900;
-}
 
 /* FOOTER */
 
 footer {
-    margin-top: 50px;
+    margin-top: 60px;
 
-    padding: 35px 5%;
+    padding: 35px 20px;
 
-    background: #ffbd00;
+    background:
+        linear-gradient(
+            90deg,
+            #ffb900,
+            #ffe06a,
+            #ffb900
+        );
 
     text-align: center;
 
-    font-weight: 800;
+    font-weight: bold;
 }
 
 footer p {
     margin-top: 8px;
 }
 
-/* MOBILE */
 
-@media(max-width:1000px) {
+/* TABLET */
 
-    .grid {
+@media (max-width: 950px) {
+
+    .menu {
         grid-template-columns:
-            repeat(2,1fr);
+            repeat(3, 1fr);
     }
 
-    .shop-grid {
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .seas {
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .nav {
-        display: none;
-    }
 }
 
-@media(max-width:700px) {
 
-    .logo {
-        font-size: 45px;
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    header {
+        flex-direction: column;
+        gap: 12px;
     }
 
-    .hero h1 {
+    .menu {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .title h1 {
+        font-size: 36px;
+    }
+
+}
+
+
+/* SMALL PHONE */
+
+@media (max-width: 450px) {
+
+    .menu {
+        grid-template-columns: 1fr;
+    }
+
+    .title h1 {
         font-size: 30px;
     }
 
-    .paths {
-        grid-template-columns: 1fr;
-    }
-
-    .vs {
-        display: none;
-    }
-
-    .grid,
-    .shop-grid,
-    .seas {
-        grid-template-columns: 1fr;
-    }
-
-    .owner {
-        display: none;
-    }
 }
+
 </style>
+
 </head>
+
 
 <body>
 
-<header class="navbar">
 
-<a href="#home" class="brand">
+<header>
+
+<div class="logo">
 ✦ ANGEL PIECE
-</a>
-
-<nav class="nav">
-
-<a href="#home">🏠 HOME</a>
-<a href="#game">🎮 GAME</a>
-<a href="#database">📚 DATABASE</a>
-<a href="#shop">🛒 SHOP</a>
-<a href="#angel">😇 ANGEL</a>
-<a href="#demon">😈 DEMON</a>
-<a href="#community">👥 COMMUNITY</a>
-<a href="#feedback">💬 FEEDBACK</a>
-
-</nav>
-
-<div class="owner">
-👑 OFFICIAL OWNER
 </div>
+
+<a href="index.html" class="home">
+🏠 HOME
+</a>
 
 </header>
 
 
 <main>
 
-<!-- HOME -->
 
-<section class="hero" id="home">
-
-<div class="logo">
-✦ ANGEL PIECE
-</div>
+<div class="title">
 
 <h1>
-THE WORLD BETWEEN
-<span class="gold">HEAVEN</span>
-AND
-<span class="purple">DEMON</span>
+ANGEL <span>PIECE</span>
 </h1>
 
 <p>
-Welcome to the official Angel Piece website.
-Explore five dangerous seas, collect Angel Fruits,
-discover Demon Fruits, choose your species,
-fight legendary bosses and become the strongest player.
+Choose a safe section and explore the world of Angel Piece.
 </p>
 
-<div class="buttons">
+</div>
 
-<a href="#game" class="btn gold-btn">
-🎮 START EXPLORING
+
+<div class="menu">
+
+
+<a href="index.html" class="menu-card">
+
+<div class="icon">🏠</div>
+
+<h2>Home</h2>
+
+<p>
+Return to the Angel Piece homepage.
+</p>
+
 </a>
 
-<a href="#database" class="btn white-btn">
-📚 DATABASE
+
+<a href="database.html" class="menu-card">
+
+<div class="icon">📚</div>
+
+<h2>Database</h2>
+
+<p>
+Explore the Angel Piece database.
+</p>
+
 </a>
 
-</div>
 
-</section>
+<a href="fruits.html" class="menu-card fruit">
 
-
-<!-- GAME -->
-
-<section class="section" id="game">
-
-<div class="section-title">
-
-<h2>🎮 ANGEL PIECE GAME</h2>
-
-<p>
-Everything you need to know about the world.
-</p>
-
-</div>
-
-<div class="grid">
-
-<div class="card">
-<div class="icon">🌊</div>
-<h3>5 SEAS</h3>
-<p>
-Explore five massive seas with unique islands,
-enemies and bosses.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">💰</div>
-<h3>CAPPIES</h3>
-<p>
-Cappies are the main currency.
-Players start with 1,000 cappies.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">♻️</div>
-<h3>REBIRTH</h3>
-<p>
-Reach the highest levels and enter the
-Celestial Realm through Rebirth.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">⚡</div>
-<h3>ABILITIES</h3>
-<p>
-Master fruits, Haki, weapons and unique
-species abilities.
-</p>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- SEAS -->
-
-<section class="section">
-
-<div class="section-title">
-
-<h2>🌊 THE FIVE SEAS</h2>
-
-<p>
-Your journey from the first ocean to Heaven.
-</p>
-
-</div>
-
-<div class="seas">
-
-<div class="sea">
-<h3>SEA 1</h3>
-<p>
-Starting world<br>
-Level 1–2,500
-</p>
-</div>
-
-<div class="sea">
-<h3>SEA 2</h3>
-<p>
-Second world<br>
-Level 2,500–5,000
-</p>
-</div>
-
-<div class="sea">
-<h3>SEA 3</h3>
-<p>
-Third world<br>
-Level 5,000–7,500+
-</p>
-</div>
-
-<div class="sea">
-<h3>SEA 4</h3>
-<p>
-Vegapunk, Elbaph,
-Imu and his followers.
-</p>
-</div>
-
-<div class="sea">
-<h3>SEA 5</h3>
-<p>
-The Celestial Realm.
-Joyboy and Rebirth.
-</p>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- DATABASE -->
-
-<section class="section" id="database">
-
-<div class="section-title">
-
-<h2>📚 ANGEL PIECE DATABASE</h2>
-
-<p>
-Everything in the game in one place.
-</p>
-
-</div>
-
-<div class="grid">
-
-<div class="card">
 <div class="icon">🍎</div>
-<h3>FRUITS</h3>
-<p>
-Angel Fruits, Demon Fruits, rarities,
-awakenings and Divine Ascensions.
-</p>
-</div>
 
-<div class="card">
+<h2>Fruits</h2>
+
+<p>
+Discover Angel Fruits and Demon Fruits.
+</p>
+
+</a>
+
+
+<a href="weapons.html" class="menu-card">
+
 <div class="icon">⚔️</div>
-<h3>WEAPONS</h3>
-<p>
-Swords and legendary weapons with stats.
-</p>
-</div>
 
-<div class="card">
+<h2>Weapons</h2>
+
+<p>
+Discover swords and their stats.
+</p>
+
+</a>
+
+
+<a href="guns.html" class="menu-card">
+
 <div class="icon">🔫</div>
-<h3>GUNS</h3>
-<p>
-Ranged weapons and special attacks.
-</p>
-</div>
 
-<div class="card">
+<h2>Guns</h2>
+
+<p>
+Explore ranged weapons.
+</p>
+
+</a>
+
+
+<a href="pets.html" class="menu-card">
+
 <div class="icon">🐾</div>
-<h3>PETS</h3>
-<p>
-Normal, Angel and Demon pets.
-</p>
-</div>
 
-<div class="card">
+<h2>Pets</h2>
+
+<p>
+Explore animals, Angel pets and Demon pets.
+</p>
+
+</a>
+
+
+<a href="species.html" class="menu-card">
+
 <div class="icon">😇</div>
-<h3>SPECIES</h3>
-<p>
-Angel and Demon species with unique powers.
-</p>
-</div>
 
-<div class="card">
+<h2>Species</h2>
+
+<p>
+Discover Angel and Demon species.
+</p>
+
+</a>
+
+
+<a href="factions.html" class="menu-card demon">
+
 <div class="icon">🏴</div>
-<h3>FACTIONS</h3>
-<p>
-Angels and Demons compete for control.
-</p>
-</div>
 
-<div class="card">
+<h2>Factions</h2>
+
+<p>
+Learn about Angels and Demons.
+</p>
+
+</a>
+
+
+<a href="enemies.html" class="menu-card">
+
 <div class="icon">👹</div>
-<h3>ENEMIES</h3>
-<p>
-Discover enemies across all five seas.
-</p>
-</div>
 
-<div class="card">
-<div class="icon">👿</div>
-<h3>BOSSES</h3>
-<p>
-Fight powerful bosses and earn rewards.
-</p>
-</div>
+<h2>Enemies</h2>
 
-<div class="card">
+<p>
+Discover enemies from the five seas.
+</p>
+
+</a>
+
+
+<a href="bosses.html" class="menu-card">
+
+<div class="icon">👑</div>
+
+<h2>Bosses</h2>
+
+<p>
+Discover powerful game bosses.
+</p>
+
+</a>
+
+
+<a href="seabeasts.html" class="menu-card">
+
 <div class="icon">🐉</div>
-<h3>SEA BEASTS</h3>
-<p>
-Demonic Captures and Angelic Helpers.
-</p>
-</div>
 
-<div class="card">
+<h2>Sea Beasts</h2>
+
+<p>
+Explore Demonic Captures and Angelic Helpers.
+</p>
+
+</a>
+
+
+<a href="islands.html" class="menu-card">
+
 <div class="icon">🏝️</div>
-<h3>ISLANDS</h3>
-<p>
-Explore the complete island database.
-</p>
-</div>
 
-<div class="card">
+<h2>Islands</h2>
+
+<p>
+Explore the islands across the five seas.
+</p>
+
+</a>
+
+
+<a href="abilities.html" class="menu-card">
+
 <div class="icon">⚡</div>
-<h3>ABILITIES</h3>
-<p>
-Special skills, Haki and fruit abilities.
-</p>
-</div>
 
-<div class="card">
+<h2>Abilities</h2>
+
+<p>
+Learn about skills, Haki and special powers.
+</p>
+
+</a>
+
+
+<a href="rebirth.html" class="menu-card rebirth">
+
 <div class="icon">♻️</div>
-<h3>REBIRTH</h3>
-<p>
-Become stronger and enter the Celestial Realm.
-</p>
-</div>
 
-</div>
-
-</section>
-
-
-<!-- FRUITS -->
-
-<section class="section" id="fruits">
-
-<div class="section-title">
-
-<h2>🍎 ANGEL & DEMON FRUITS</h2>
+<h2>Rebirth</h2>
 
 <p>
-Use your powers for good or fall into darkness.
+Learn about Rebirth and the Celestial Realm.
 </p>
 
-</div>
+</a>
 
-<div class="paths">
 
-<div class="path angel">
+<a href="feedback.html" class="menu-card">
 
-<div class="big">😇🍎</div>
+<div class="icon">💬</div>
 
-<h3>ANGEL FRUITS</h3>
+<h2>Feedback</h2>
 
 <p>
-Angel Fruits give players supernatural abilities.
-Fruits can awaken at level 250, 500, 750 and 1,000.
-At level 500 powerful Beast Ascensions become possible.
-At level 1,000 a Divine Ascension can be unlocked.
+Send an idea or report a game bug.
 </p>
 
-</div>
+</a>
 
-<div class="vs">
-VS
-</div>
-
-<div class="path demon">
-
-<div class="big">😈🍎</div>
-
-<h3>DEMON FRUITS</h3>
-
-<p>
-Players who repeatedly harm innocent NPCs or use
-their Angel powers for evil can become corrupted.
-At high corruption they can unlock Demon Fruits
-and become bounty targets.
-</p>
 
 </div>
-
-</div>
-
-</section>
-
-
-<!-- ANGEL -->
-
-<section class="section" id="angel">
-
-<div class="section-title">
-
-<h2>😇 ANGEL PATH</h2>
-
-<p>
-Protect the world and become a legendary Angel.
-</p>
-
-</div>
-
-<div class="grid">
-
-<div class="card">
-<div class="icon">😇</div>
-<h3>ANGEL SPECIES</h3>
-<p>
-Examples include Angelic Wolf and other
-special Angel species.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">🐺</div>
-<h3>ANGELIC PETS</h3>
-<p>
-Some species can receive a free pet.
-There is a 50% chance when obtaining the race.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">🐉</div>
-<h3>ANGELIC HELPERS</h3>
-<p>
-Good sea beasts can help Angels during battles.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">✨</div>
-<h3>GOOD ACTIONS</h3>
-<p>
-Help NPCs, complete quests and protect other players.
-</p>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- DEMON -->
-
-<section class="section" id="demon">
-
-<div class="section-title">
-
-<h2>😈 DEMON PATH</h2>
-
-<p>
-Fall into corruption and become a feared bounty target.
-</p>
-
-</div>
-
-<div class="grid">
-
-<div class="card">
-<div class="icon">😈</div>
-<h3>DEMON SPECIES</h3>
-<p>
-Examples include Demonic Dragon and other
-powerful Demon species.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">🐲</div>
-<h3>DEMON PETS</h3>
-<p>
-Demon players can obtain special Demon pets
-connected to their faction.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">☠️</div>
-<h3>BOUNTY</h3>
-<p>
-Fully corrupted players can become bounty targets.
-Extremely powerful Demons can have bounties above
-one billion cappies.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">🌑</div>
-<h3>CORRUPTION</h3>
-<p>
-Repeated evil actions increase your corruption
-and push your character toward the Demon path.
-</p>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- SHOP -->
-
-<section class="section" id="shop">
-
-<div class="section-title">
-
-<h2>🛒 ANGEL PIECE SHOP</h2>
-
-<p>
-Spend your cappies wisely.
-</p>
-
-</div>
-
-<div class="shop-grid">
-
-<div class="card">
-<div class="icon">⚔️</div>
-<h3>SWORDS</h3>
-<p>
-Purchase swords and upgrade your combat power.
-</p>
-<div class="price">💰 Cappies</div>
-</div>
-
-<div class="card">
-<div class="icon">🐾</div>
-<h3>PETS</h3>
-<p>
-Purchase animals and special Angel or Demon pets.
-</p>
-<div class="price">💰 Cappies</div>
-</div>
-
-<div class="card">
-<div class="icon">🍎</div>
-<h3>FRUITS</h3>
-<p>
-Purchase Angel Fruits and discover rare powers.
-</p>
-<div class="price">💰 Cappies</div>
-</div>
-
-<div class="card">
-<div class="icon">🩺</div>
-<h3>SPECIES DOCTOR</h3>
-<p>
-Change your species for 10 cappies each time.
-</p>
-<div class="price">💰 10 Cappies</div>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- BOSSES -->
-
-<section class="section">
-
-<div class="section-title">
-
-<h2>👑 LEGENDARY BOSSES</h2>
-
-<p>
-Only the strongest players can defeat them.
-</p>
-
-</div>
-
-<div class="grid">
-
-<div class="card">
-<div class="icon">👑</div>
-<h3>IMU</h3>
-<p>
-The final major boss of Sea 4.
-Level 19,999.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">⚔️</div>
-<h3>IMU'S FIVE HELPERS</h3>
-<p>
-Five powerful enemies protecting Imu.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">☀️</div>
-<h3>JOYBOY</h3>
-<p>
-A legendary figure found in Sea 5.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">👑</div>
-<h3>ETERNAL KING</h3>
-<p>
-A powerful enemy connected to the Celestial Realm
-and the Rebirth system.
-</p>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- REBIRTH -->
-
-<section class="section">
-
-<div class="section-title">
-
-<h2>♻️ REBIRTH & CELESTIAL REALM</h2>
-
-<p>
-Your journey doesn't end at the level cap.
-</p>
-
-</div>
-
-<div class="grid">
-
-<div class="card">
-<div class="icon">1️⃣</div>
-<h3>REACH THE CAP</h3>
-<p>
-Reach the required level and prepare for Rebirth.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">2️⃣</div>
-<h3>REBIRTH</h3>
-<p>
-Reset your progression in exchange for permanent
-powerful bonuses.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">3️⃣</div>
-<h3>CELESTIAL REALM</h3>
-<p>
-Return to the heavenly world and discover
-new challenges.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">4️⃣</div>
-<h3>GET STRONGER</h3>
-<p>
-Each Rebirth makes future adventures more powerful
-and challenging.
-</p>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- COMMUNITY -->
-
-<section class="section community" id="community">
-
-<div class="section-title">
-
-<h2>👥 ANGEL PIECE COMMUNITY</h2>
-
-<p>
-Built together with the players.
-</p>
-
-</div>
-
-<div class="grid">
-
-<div class="card">
-<div class="icon">💡</div>
-<h3>IDEAS</h3>
-<p>
-Players can suggest new Fruits, Islands, Pets,
-Bosses and features.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">🐛</div>
-<h3>BUG REPORTS</h3>
-<p>
-Report glitches and bugs so the game can improve.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">🏆</div>
-<h3>EVENTS</h3>
-<p>
-Community events and special challenges.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">🤝</div>
-<h3>PLAYERS</h3>
-<p>
-Angels and Demons can build the community together.
-</p>
-</div>
-
-</div>
-
-<div class="chatgpt">
-🤖 Special thanks to ChatGPT for helping build Angel Piece.
-</div>
-
-</section>
-
-
-<!-- FEEDBACK -->
-
-<section class="section feedback" id="feedback">
-
-<div class="section-title">
-
-<h2>💬 PLAYER FEEDBACK</h2>
-
-<p>
-Have an idea or found a bug?
-</p>
-
-</div>
-
-<div class="feedback-box">
-
-<form onsubmit="sendFeedback(event)">
-
-<select id="type">
-
-<option>Game Idea</option>
-<option>Bug / Glitch</option>
-<option>Fruit Idea</option>
-<option>Pet Idea</option>
-<option>Island Idea</option>
-<option>Boss Idea</option>
-<option>Other</option>
-
-</select>
-
-<input
-id="player"
-type="text"
-placeholder="Your Roblox username"
-required
->
-
-<textarea
-id="message"
-placeholder="Tell us your idea or bug..."
-required
-></textarea>
-
-<button
-type="submit"
-class="btn gold-btn"
->
-SEND FEEDBACK
-</button>
-
-</form>
-
-<p
-id="feedbackResult"
-style="margin-top:15px;font-weight:900;"
-></p>
-
-</div>
-
-</section>
 
 </main>
 
 
 <footer>
 
-<div>
 ✦ ANGEL PIECE
-</div>
 
 <p>
-The world between Heaven and Demon.
-</p>
-
-<p>
-👑 Official Owner
-</p>
-
-<p>
-🤖 Special thanks to ChatGPT.
+A family-friendly fan game website.
 </p>
 
 </footer>
 
-
-<script>
-
-function sendFeedback(event) {
-
-    event.preventDefault();
-
-    const type =
-        document.getElementById("type").value;
-
-    const player =
-        document.getElementById("player").value;
-
-    const message =
-        document.getElementById("message").value;
-
-    const result =
-        document.getElementById("feedbackResult");
-
-    result.innerHTML =
-        "✅ Thank you " +
-        player +
-        "! Your " +
-        type.toLowerCase() +
-        " has been received.";
-
-    console.log({
-        type: type,
-        player: player,
-        message: message
-    });
-}
-
-</script>
 
 </body>
 </html>
